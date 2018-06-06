@@ -18,13 +18,27 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # Flexible authentication solution for Rails with Warden.
 gem 'devise'
+# Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+gem 'enum_help'
+#Minimal authorization through OO design and pure Ruby classes
+gem "pundit"
+# Integration of RubyMoney - Money with Rails
+gem 'money-rails'
+# Easy file attachment management for ActiveRecord
+gem "paperclip", "~> 5.0.0"
+
+source 'https://rails-assets.org' do
+  # BootBox
+  gem 'rails-assets-bootbox'
+  # Bootstrap
+  gem 'rails-assets-bootstrap', '3.3.7'
+  # NotifyJS
+  gem 'rails-assets-notifyjs'
+end
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -41,10 +55,16 @@ gem 'bootstrap_sb_admin_base_v2'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Catches mail and serves it through a dream.
+  gem "mailcatcher"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'better_errors'
   gem 'rails-erd'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
+  # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
+  gem 'lerolero_generator'
 end
 
 group :development do
